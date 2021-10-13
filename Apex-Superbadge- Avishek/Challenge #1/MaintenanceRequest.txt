@@ -1,0 +1,7 @@
+trigger MaintenanceRequest on Case (after update) {
+    
+    if(trigger.isAfter && trigger.isUpdate){
+     MaintenanceRequestHelper.updateWorkOrders(trigger.newMap, trigger.new);
+    }
+
+}
